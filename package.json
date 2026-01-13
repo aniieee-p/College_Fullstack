@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",    
   "name": "nodejs-3year",
   "version": "1.0.0",
   "description": "",
