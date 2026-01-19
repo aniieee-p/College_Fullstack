@@ -8,7 +8,7 @@ const serverani = http.createServer((req, res) =>{
     res.setHeader('Content-Type', 'text/plain');
 
     if(req.url === '/'){
-        res.end('This is my  main home page. \n');
+        res.write('This is my  main home page. \n');
     }else if (req.url === 'about_us'){
         res.write('this is about us page\n');
     }else if (req.url === 'contact'){
