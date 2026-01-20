@@ -8,16 +8,27 @@ const serverani = http.createServer((req, res) =>{
     res.setHeader('Content-Type', 'text/plain');
 
     if(req.url === '/'){
-        res.write('This is my  main home page. \n');
-    }else if (req.url === 'about_us'){
+
+        res.setHeader('Content-Type', 'text/html'); 
+        res.write("<h1>This is my main home page.</h1> \n");
+
+    }else if (req.url === '/about_us'){
+       
+        res.setHeader('Content-Type', 'text/plain');
         res.write('this is about us page\n');
-    }else if (req.url === 'contact'){
+
+    }else if (req.url === '/contact'){
+
+        res.setHeader('Content-Type', 'text/plain');
         res.write('this is my contact us page\n');
+
     }else{
+
         res.write('404 page not found\n');
+        
     }
     res.end();
-    
+
 
 });
 
