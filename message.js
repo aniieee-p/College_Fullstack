@@ -31,3 +31,13 @@ const isPalindrome = (str) => {
 console.log("Ques 4 result:", isPalindrome(str));
 
 export default getMessage;
+
+
+// Ques 5. create a file using promises.
+const createFile = (fileName, content) => {
+    const fs = require('fs').promises;
+    return fs.writeFile(fileName, content)
+        .then(() => console.log('File created successfully'))
+        .catch((err) => console.error('Error creating file:', err));
+}   
+createFile('example.txt', 'This is an example file content.');
