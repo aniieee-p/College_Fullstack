@@ -31,10 +31,8 @@ readFileWithPromises();
 
 async function readFileWithPromisify() {
     try {
-        let  fileData =
-        await Anisha("cb.txt", "utf-8");
-        console.log(
-            "Reading the file data with custom(promisyfy)", fileData);
+        let  fileData = await Anisha("cb.txt", "utf-8");
+        console.log("Reading the file data with custom(promisyfy)", fileData);
 
     }catch (error) {
         console.log(error)
@@ -44,5 +42,21 @@ async function readFileWithPromisify() {
     
 }
 readFileWithPromisify();
+
+
+/////////////////////////////////////////////////
+async function openfile(){
+    try {
+        const fileHandle = await fs.open("cb.txt", "r+");
+        console.log("file opened successfully");
+
+        await fileHandle.close();
+
+    } catch (error) {
+        console.log("error in opening file:", error);
+    }
+}
+openfile();
+
 
 
